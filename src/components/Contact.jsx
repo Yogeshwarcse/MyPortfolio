@@ -83,28 +83,34 @@ export default function Contact() {
       <div className="absolute bottom-32 left-16 w-28 h-28 rounded-full bg-[#00285e] opacity-13 blur-lg pulse-anim" style={{zIndex: 0, animationDelay: '2s'}}></div>
 
       <h2 className="text-3xl font-bold mb-8 relative z-10">Contact☎ :</h2>
-      <div className="flex flex-col gap-6 relative z-10">
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
         {contactMethods.map((method, index) => (
-          <article
+          <div
             key={index}
-            className="border rounded-lg p-6 bg-white dark:bg-gray-800 hover:shadow-md transition-shadow"
-            style={{position: 'relative', zIndex: 10}}
+            className="bg-blue-50 dark:bg-gray-800 rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-gray-700 transition-all hover:shadow-md hover:-translate-y-1"
           >
-            <h4 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">{method.title}</h4>
-            <p className="text-gray-600 dark:text-gray-300">{method.description}</p>
-            {/* Username Display */}
-            <p className="text-gray-500 text-sm font-medium mt-1 mb-4">
-              @{method.username}
-            </p>
-            <a
-              href={method.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 font-medium hover:underline inline-flex items-center gap-1 hover:gap-2 transition-all"
-            >
-              {method.action}
-            </a>
-          </article>
+            <h3 className="text-xl font-bold mb-3 text-gray-800 dark:text-white border-b border-gray-100 dark:border-gray-700 pb-2">
+              {method.title}
+            </h3>
+
+            <p className="text-gray-600 dark:text-gray-300 mb-4">{method.description}</p>
+
+            <div className="flex items-center justify-between gap-4">
+              <span className="px-3 py-1.5 text-sm font-medium bg-gray-50 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-lg border border-gray-200 dark:border-gray-600">
+                @{method.username}
+              </span>
+
+              <a
+                href={method.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors shadow-sm"
+              >
+                {method.action}
+              </a>
+            </div>
+          </div>
         ))}
       </div>
     </section>

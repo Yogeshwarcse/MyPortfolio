@@ -1,14 +1,24 @@
 import { Link } from 'react-router-dom';
 import HeroImage from '../assets/images/1000054663.jpg';
+import BackgroundHero from '../assets/images/background-Hero.jpg';
 
 export default function Hero() {
   return (
-    <section className="py-20 bg-gradient-to-b from-blue-100/50 to-transparent dark:from-gray-800/60 transition-colors">
-      <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+    <section 
+      className="py-20 transition-colors relative"
+      style={{
+        backgroundImage: `url(${BackgroundHero})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}
+    >
+
+      <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-12 relative z-10">
 
         {/* Text Content */}
-        <div className="md:w-1/2 text-center md:text-left">
-          <h4 className="text-4xl md:text-5xl font-extrabold mb-4 text-gray-900 dark:text-white">
+        <div className="md:w-1/2 text-center md:text-left relative z-10">
+          <h4 className="text-4xl md:text-5xl font-extrabold mb-4 text-black dark:text-black">
             Hello 👋, I'm <span style={{ color: '#ffd23eff', padding: '0 6px', borderRadius: '6px', display: 'inline-block' }}>Yogeshwar R 🦸‍♂️</span>
           </h4>
           <p className="text-lg text-black dark:text-black-300 mb-6 leading-relaxed">
@@ -29,7 +39,7 @@ export default function Hero() {
         </div>
 
         {/* Image Content */}
-        <div className="md:w-1/2 flex justify-center">
+        <div className="md:w-1/2 flex justify-center relative z-10">
           <div className="relative group">
             <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-400 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
             <img

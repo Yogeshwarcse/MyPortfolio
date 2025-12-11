@@ -1,8 +1,9 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   const navLinks = [
     { name: 'Home', path: '/' },
@@ -29,10 +30,16 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 to={link.path}
-                className="relative px-4 py-2 text-gray-700 dark:text-gray-200 font-medium group overflow-hidden rounded-full hover:text-black dark:hover:text-white transition-colors"
+                className={`relative px-4 py-2 font-medium group overflow-hidden rounded-full transition-colors ${
+                  location.pathname === link.path
+                    ? 'bg-blue-300 text-gray-900 dark:bg-blue-400 dark:text-gray-900'
+                    : 'text-gray-700 dark:text-gray-200 hover:text-black dark:hover:text-white'
+                }`}
               >
                 <span className="relative z-10">{link.name}</span>
-                <span className="absolute inset-0 bg-gray-100 dark:bg-gray-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left -z-0 ease-out"></span>
+                {location.pathname !== link.path && (
+                  <span className="absolute inset-0 bg-gray-100 dark:bg-gray-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left -z-0 ease-out"></span>
+                )}
               </Link>
             ))}
           </nav>
@@ -53,7 +60,11 @@ export default function Navbar() {
             <Link
               key={link.name}
               to={link.path}
-              className="px-4 py-3 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-200 transition-all font-medium"
+              className={`px-4 py-3 rounded-xl text-gray-700 dark:text-gray-200 transition-all font-medium ${
+                location.pathname === link.path
+                  ? 'bg-blue-300 text-gray-900 dark:bg-blue-400 dark:text-gray-900'
+                  : 'hover:bg-gray-50 dark:hover:bg-gray-700'
+              }`}
               onClick={() => setMobileMenuOpen(false)}
             >
               {link.name}

@@ -1,14 +1,20 @@
 import Image2 from '../assets/images/image2.jpg';
+import BackgroundAbout from '../assets/images/background-about.jpg';
 
 export default function About(){
   return (
-    <section
-      className="py-16 px-4 transition-colors"
-      style={{ backgroundColor: 'rgba(0,77,152,0.08)' }}
+    <section 
+      className="py-16 px-4 transition-colors relative"
+      style={{
+        backgroundImage: `url(${BackgroundAbout})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}
     >
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 relative z-10">
 
-        <div className="md:w-1/2">
+        <div className="md:w-1/2 relative z-10">
           <h2 className="text-3xl font-bold mb-4">About Me😊 :</h2> 
 
           <p className="text-black leading-relaxed mb-4">
@@ -24,7 +30,7 @@ export default function About(){
           </p>
         </div>
 
-        <div className="md:w-1/2 flex justify-center">
+        <div className="md:w-1/2 flex justify-center relative z-10">
           <div className="relative group">
             <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-400 rounded-full blur opacity-20 group-hover:opacity-40 transition duration-700"></div>
             <img
