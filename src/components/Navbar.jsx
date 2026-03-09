@@ -16,10 +16,10 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50">
-      <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-md rounded-full shadow-lg border border-gray-200/50 px-6 py-3 flex items-center justify-between transition-all duration-300 hover:shadow-2xl hover:scale-[1.005]">
+      <div className="bg-black/20 backdrop-blur-lg rounded-full shadow-2xl border border-white/10 px-6 py-3 flex items-center justify-between transition-all duration-300 hover:shadow-cyan-500/20 hover:border-cyan-500/30">
 
-        <Link to="/" className="text-2xl font-bold text-gray-900 dark:text-white hover:opacity-80 transition-opacity">
-          Yogeshwar Portfolio !!
+        <Link to="/" className="text-2xl font-bold bg-gradient-to-r from-cyan-300 to-purple-400 bg-clip-text text-transparent hover:from-purple-300 hover:to-cyan-300 transition-all duration-300">
+          Yogeshwar Portfolio
         </Link>
 
         
@@ -30,15 +30,15 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 to={link.path}
-                className={`relative px-4 py-2 font-medium group overflow-hidden rounded-full transition-colors ${
+                className={`relative px-4 py-2 font-medium group overflow-hidden rounded-full transition-all duration-300 ${
                   location.pathname === link.path
-                    ? 'bg-blue-300 text-gray-900 dark:bg-blue-400 dark:text-gray-900'
-                    : 'text-gray-700 dark:text-gray-200 hover:text-black dark:hover:text-white'
+                    ? 'bg-gradient-to-r from-cyan-400 to-purple-400 text-white shadow-lg'
+                    : 'text-gray-300 hover:text-white'
                 }`}
               >
                 <span className="relative z-10">{link.name}</span>
                 {location.pathname !== link.path && (
-                  <span className="absolute inset-0 bg-gray-100 dark:bg-gray-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left -z-0 ease-out"></span>
+                  <span className="absolute inset-0 bg-gradient-to-r from-cyan-400/15 to-purple-400/15 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-full"></span>
                 )}
               </Link>
             ))}
@@ -46,7 +46,7 @@ export default function Navbar() {
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+            className="md:hidden p-2 rounded-full text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-300"
           >
             {mobileMenuOpen ? '✕' : '☰'}
           </button>
@@ -54,16 +54,16 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`absolute top-full left-0 w-full mt-2 bg-white/95 dark:bg-gray-800/95 backdrop-blur-xl rounded-2xl shadow-xl border border-white/20 overflow-hidden transition-all duration-300 origin-top ${mobileMenuOpen ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0 h-0'}`}>
+      <div className={`absolute top-full left-0 w-full mt-2 bg-black/30 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/10 overflow-hidden transition-all duration-300 origin-top ${mobileMenuOpen ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0 h-0'}`}>
         <div className="p-4 flex flex-col gap-2">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               to={link.path}
-              className={`px-4 py-3 rounded-xl text-gray-700 dark:text-gray-200 transition-all font-medium ${
+              className={`px-4 py-3 rounded-xl text-gray-300 transition-all font-medium hover:text-white ${
                 location.pathname === link.path
-                  ? 'bg-blue-300 text-gray-900 dark:bg-blue-400 dark:text-gray-900'
-                  : 'hover:bg-gray-50 dark:hover:bg-gray-700'
+                  ? 'bg-gradient-to-r from-cyan-400 to-purple-400 text-white'
+                  : 'hover:bg-white/10'
               }`}
               onClick={() => setMobileMenuOpen(false)}
             >

@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 export default function Contact() {
   const contactMethods = [
     {
@@ -31,88 +33,80 @@ export default function Contact() {
   ];
 
   return (
-    <section className="max-w-6xl mx-auto py-16 px-4 relative overflow-hidden bg-gradient-to-br from-blue-50 via-blue-100 to-blue-50">
-      <style dangerouslySetInnerHTML={{__html: `
-        @keyframes float1 {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          50% { transform: translate(30px, -30px) scale(1.1); }
-        }
-        @keyframes float2 {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          50% { transform: translate(-40px, 40px) scale(1.15); }
-        }
-        @keyframes float3 {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          50% { transform: translate(50px, 30px) scale(1.05); }
-        }
-        @keyframes float4 {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          50% { transform: translate(-30px, -40px) scale(1.2); }
-        }
-        @keyframes float5 {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          50% { transform: translate(35px, 45px) scale(1.1); }
-        }
-        @keyframes float6 {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          50% { transform: translate(-45px, -25px) scale(1.08); }
-        }
-        @keyframes pulse {
-          0%, 100% { opacity: 0.15; }
-          50% { opacity: 0.25; }
-        }
-        .float1 { animation: float1 8s ease-in-out infinite; }
-        .float2 { animation: float2 10s ease-in-out infinite; }
-        .float3 { animation: float3 12s ease-in-out infinite; }
-        .float4 { animation: float4 9s ease-in-out infinite; }
-        .float5 { animation: float5 11s ease-in-out infinite; }
-        .float6 { animation: float6 7s ease-in-out infinite; }
-        .pulse-anim { animation: pulse 4s ease-in-out infinite; }
-      `}} />
+    <motion.section 
+      className="min-h-screen py-16 px-4 relative overflow-hidden"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+    >
+      {/* Animated Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#020617] via-[#0f172a] to-[#1e293b]" />
+      <div className="absolute inset-0 bg-gradient-to-t from-cyan-500/5 via-purple-500/5 to-blue-500/5" />
 
-      {/* Animated decorative spots */}
-      <div className="absolute -top-12 -left-12 w-48 h-48 rounded-full bg-[#00285e] opacity-20 blur-2xl float1" style={{zIndex: 0}}></div>
-      <div className="absolute top-32 right-16 w-56 h-56 rounded-full bg-[#00285e] opacity-15 blur-3xl float2" style={{zIndex: 0}}></div>
-      <div className="absolute bottom-24 left-24 w-40 h-40 rounded-full bg-[#00285e] opacity-18 blur-xl float3" style={{zIndex: 0}}></div>
-      <div className="absolute top-1/3 left-1/3 w-44 h-44 rounded-full bg-[#00285e] opacity-12 blur-2xl float4" style={{zIndex: 0}}></div>
-      <div className="absolute bottom-16 right-1/4 w-52 h-52 rounded-full bg-[#00285e] opacity-14 blur-3xl float5" style={{zIndex: 0}}></div>
-      <div className="absolute top-2/3 right-12 w-36 h-36 rounded-full bg-[#00285e] opacity-16 blur-xl float6" style={{zIndex: 0}}></div>
-      
-      {/* Additional pulsing spots */}
-      <div className="absolute top-20 left-1/2 w-32 h-32 rounded-full bg-[#00285e] opacity-10 blur-2xl pulse-anim" style={{zIndex: 0}}></div>
-      <div className="absolute bottom-32 left-16 w-28 h-28 rounded-full bg-[#00285e] opacity-13 blur-lg pulse-anim" style={{zIndex: 0, animationDelay: '2s'}}></div>
+      {/* Floating particles */}
+      {[...Array(15)].map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute w-2 h-2 rounded-full bg-purple-400/20"
+          style={{ 
+            left: `${Math.random() * 100}%`, 
+            top: `${Math.random() * 100}%` 
+          }}
+          animate={{
+            y: [0, -70, 0],
+            x: [0, Math.random() * 30 - 15, 0],
+            opacity: [0, 0.5, 0],
+            scale: [0, 1, 0],
+          }}
+          transition={{
+            duration: 4 + Math.random() * 4,
+            repeat: Infinity,
+            delay: Math.random() * 4,
+          }}
+        />
+      ))}
 
-      <h2 className="text-3xl font-bold mb-8 relative z-10">Contact☎ :</h2>
+      <div className="max-w-6xl mx-auto relative z-10">
+        <motion.h2 
+          className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-cyan-300 to-purple-400 bg-clip-text text-transparent"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          Get In Touch ☎
+        </motion.h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
-        {contactMethods.map((method, index) => (
-          <div
-            key={index}
-            className="bg-blue-50 dark:bg-gray-800 rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-gray-700 transition-all hover:shadow-md hover:-translate-y-1"
-          >
-            <h3 className="text-xl font-bold mb-3 text-gray-800 dark:text-white border-b border-gray-100 dark:border-gray-700 pb-2">
-              {method.title}
-            </h3>
-
-            <p className="text-gray-600 dark:text-gray-300 mb-4">{method.description}</p>
-
-            <div className="flex items-center justify-between gap-4">
-              <span className="px-3 py-1.5 text-sm font-medium bg-gray-50 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-lg border border-gray-200 dark:border-gray-600">
-                @{method.username}
-              </span>
-
-              <a
-                href={method.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors shadow-sm"
-              >
-                {method.action}
-              </a>
-            </div>
-          </div>
-        ))}
+        <div className="grid md:grid-cols-2 gap-8">
+          {contactMethods.map((method, index) => (
+            <motion.div
+              key={index}
+              className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-6 shadow-2xl hover:border-cyan-500/30 transition-all duration-300"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.02 }}
+            >
+              <h3 className="text-xl font-bold mb-2 text-white">{method.title}</h3>
+              <p className="text-gray-300 mb-4">{method.description}</p>
+              <div className="flex items-center justify-between">
+                <span className="px-3 py-1 text-sm font-medium bg-cyan-400/15 border border-cyan-400/30 text-cyan-200 rounded-lg">
+                  @{method.username}
+                </span>
+                <a
+                  href={method.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 bg-gradient-to-r from-cyan-400 to-purple-400 text-white font-medium rounded-lg hover:from-purple-300 hover:to-cyan-300 transition-all duration-300 shadow-lg hover:shadow-cyan-400/50"
+                >
+                  {method.action}
+                </a>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
