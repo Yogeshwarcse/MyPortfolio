@@ -1,5 +1,11 @@
 const projects = [
   {
+    title: 'Edurate (Faculty Evaluation System)',
+    description: 'Developed a comprehensive faculty evaluation and feedback management platform using the MERN stack to streamline the process of collecting and analyzing student feedback. The system enables students to securely submit feedback on faculty performance, teaching quality, and course delivery, while the management can access structured reports and analytics to evaluate faculty effectiveness. Implemented role-based authentication, real-time data management, and interactive dashboards to track feedback trends, faculty ratings, and performance insights, enabling data-driven academic improvement and transparent decision-making.',
+    link: 'https://faculty-eval-system-6.vercel.app/',
+    tech: ['MongoDB', 'Express.js', 'React.js', 'Node.js']
+  },
+  {
     title: 'Online Examination System',
     description: 'Developed a comprehensive online examination platform that streamlines the entire exam lifecycle, including exam creation, question management, secure student login, timed assessments, automated scoring, and real-time leaderboards. The frontend is built with React.js and Tailwind CSS to deliver a fully responsive and user-friendly interface, while the backend uses Node.js and Express to power robust, modular, and scalable APIs for handling authentication, exam scheduling, question processing, and result generation. The system ensures security through proper access control and session handling, and its clean, performance-optimized architecture enables smooth communication between the UI and backend, making it easy to expand with future features such as analytics, role-based access, and advanced reporting.',
     link: 'https://online-examination-7.vercel.app/',
@@ -16,6 +22,12 @@ const projects = [
     description: 'Developed a dynamic clothing website that enables users to browse, select, and purchase apparel online, providing a seamless and engaging shopping experience. The platform features real-time inventory tracking to ensure accurate product availability, personalized recommendations to enhance user engagement, and a secure checkout process to protect sensitive customer information. Designed with usability and performance in mind, the website delivers a smooth, intuitive interface that combines convenience with reliability for both shoppers and administrators.',
     link: 'https://github.com/Yogeshwarcse/E-Commerce-Clothing-Website-',
     tech: ['React.js', 'Figma', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB']
+  },
+  {
+    title: 'Ai Log Analyzer',
+    description: 'Developed an AI-powered Log Analyzer that enables users to upload log files and automatically detect, classify, and summarize errors using large language models (LLMs). The system analyzes logs to identify error patterns, severity levels, and potential root causes, helping reduce manual debugging efforts. Built using the MERN stack with a MySQL backend, it ensures efficient log ingestion, processing, and structured storage. The platform provides faster troubleshooting, actionable insights, and improved system reliability through intelligent log analysis and scalable architecture.',
+    link: 'https://github.com/Yogeshwarcse/Ai-Log-Analyzer.git',
+    tech: ['React.js', 'Node.js', 'Express.js', 'MySql']
   }
 ];
 
