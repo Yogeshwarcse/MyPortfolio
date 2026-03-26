@@ -1,5 +1,17 @@
 const projects = [
   {
+    title: 'Disaster Relief Management System (DisasterRelief)',
+    description: 'Built a scalable disaster relief coordination platform using the MERN stack to optimize emergency response and resource allocation during crises. The system enables authorities and volunteers to manage relief requests, track affected areas, and coordinate aid distribution in real time. Integrated advanced algorithms such as Greedy, Priority Queue, and Dijkstra’s Algorithm to efficiently allocate resources, prioritize critical requests, and determine the shortest and fastest routes for relief delivery. Implemented role-based authentication, real-time updates, and interactive dashboards to monitor operations.',
+    link: 'https://disaster-management-6qnp.vercel.app/',
+    tech: ['React.js', 'Node.js', 'Express.js', 'MongoDB']
+  },
+  {
+    title: 'AI-Based Mental Wellness System (Serenity)',
+    description: 'Developed an intelligent mental wellness platform using the MERN stack integrated with a Python-based FastAPI service to analyze and monitor user emotional health. The system captures voice input from users and utilizes Convolutional Neural Networks (CNNs) along with the Librosa library for audio feature extraction to predict mood and estimate stress levels. Implemented real-time processing, secure API communication between frontend and AI service, and interactive dashboards to visualize emotional insights.',
+    link: 'https://ai-mentalwellness.onrender.com/dashboard',
+    tech: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Python']
+  },
+  {
     title: 'Edurate (Faculty Evaluation System)',
     description: 'Developed a comprehensive faculty evaluation and feedback management platform using the MERN stack to streamline the process of collecting and analyzing student feedback. The system enables students to securely submit feedback on faculty performance, teaching quality, and course delivery, while the management can access structured reports and analytics to evaluate faculty effectiveness. Implemented role-based authentication, real-time data management, and interactive dashboards to track feedback trends, faculty ratings, and performance insights, enabling data-driven academic improvement and transparent decision-making.',
     link: 'https://faculty-eval-system-6.vercel.app/',
