@@ -8,7 +8,7 @@ const projects = [
   {
     title: 'AI-Based Mental Wellness System (Serenity)',
     description: 'Developed an intelligent mental wellness platform using the MERN stack integrated with a Python-based FastAPI service to analyze and monitor user emotional health. The system captures voice input from users and utilizes Convolutional Neural Networks (CNNs) along with the Librosa library for audio feature extraction to predict mood and estimate stress levels. Implemented real-time processing, secure API communication between frontend and AI service, and interactive dashboards to visualize emotional insights.',
-    link: 'https://ai-mentalwellness.onrender.com/dashboard',
+    link: 'https://mental-wellness-system-b7g3.vercel.app',
     tech: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Python']
   },
   {
